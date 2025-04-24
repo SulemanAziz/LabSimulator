@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login page</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="LoginRedirect.js"></script>
+    <script src="sql-wasm.js" defer></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('Webpages/Images/LoginPage.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            backdrop-filter: brightness(0.7);
+        }
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            background-color: rgb(51,51,51);
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgb(51,51,51);
+            font-size: x-large;
+            font-style: italic;
+        }
+        form {
+            font-size: xx-large;
+        }
+        input {
+            font-size: xx-large;
+        }
+        button {
+            font-size: xx-large;
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VIRTUAL LAB SIMULATOR</h1>
+    </header>
+    <div>
+        <form id="loginForm">
+            <label>Enter ID</label>
+            <br>
+            <input type="text" id="username" required>
+            <br>
+            <label>Enter Password</label>
+            <br>
+            <input type="password" id="pass" required>
+            <br>
+            <br>
+            <button style="width: 30%;" type="reset">Reset</button>
+            <button style="width: 65%;" onclick="Validate_User(event, document.getElementById('username').value, document.getElementById('pass').value)">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
