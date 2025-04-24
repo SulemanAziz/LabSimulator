@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Experiments</title>
+    <script src="Javascript\Physics\Exp.js" defer></script>
+    <link rel="stylesheet" href="\Style.css">
+    <style>
+        .navbar{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="Homepage.html">
+            <img src="Images\home.png" alt="Logo">
+        </a>
+    </div>
+
+    <div style="width: 65%; height:auto; display:inline-block;" name="form" id="form" >
+        <h1>Simulate Pendulum Period</h1>
+        <form>
+            <label>Enter Viscosity (Pa/s) or Select Medium</label>
+            <br>
+            <input type="number"></input>
+            <input type="radio" name="viscosity" value="air">Air</input>
+            <input type="radio" name="viscosity" value="water">Water</input>
+            <hr>
+            <label>Enter Length</label>
+            <br>
+            <input type="number" name="length"></input>
+            <input type="radio" name="l_unit" value="cm">Centimeter</input>
+            <input type="radio" name="l_unit" value="m">Meter</input>
+            <hr>
+            <label>Enter Diameter</label>
+            <br>
+            <input type="number" name="diameter"></input>
+            <input type="radio" name="d_unit" value="cm">Centimeter</input>
+            <input type="radio" name="d_unit" value="m">Meter</input>
+            <hr>
+            <label>Enter Mass</label>
+            <br>
+            <input type="number" name="mass"></input>
+            <input type="radio" name="unit" value="kg">Kilograms</input>
+            <input type="radio" name="unit" value="g">Grams</input>
+            <hr>
+            <h4>If you'd ike to change gravity, please input a custom value for g (m/s^2):</h4>
+            <input type="number" name="gravity" value="9.8"></input>
+            <hr>
+            <button type="reset" style="width: 49%;">Reset</button>
+            <button type="submit" style="width: 49%;">Calculate</button>
+        </form>
+    </div>
+
+    <div name="output" id="output" style="display:inline-block; position:fixed; width: 23%; height:15%;">
+        <h1>Period:</h1>
+        <h2 id="period" style="font-size:xx-large;color:cyan"></h2>
+    </div>
+
+    <div name="Graphic" style="display:inline-block; position:fixed; width: 31.5%; height:15%; margin-top: 10%;">
+        <img src="Images\Pendulum.gif" style="width:80%; border-radius: 10px;"></img>
+</body>
+</html>

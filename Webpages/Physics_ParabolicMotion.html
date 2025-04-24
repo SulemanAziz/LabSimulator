@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Experiments</title>
+    <script src="Javascript\Physics\Exp.js" defer></script>
+    <link rel="stylesheet" href="\Style.css">
+    <style>
+        .navbar{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="Homepage.html">
+            <img src="Images\home.png" alt="Logo">
+        </a>
+    </div>
+
+    <div style="width: 65%; height:auto; display:inline-block;" name="form" id="form" >
+        <h1>Parabolic Motion</h1>
+        <form>
+            <label>Enter Distance</label>
+            <br>
+            <input type="number"></input>
+            <input type="radio" name="viscosity" value="kaliometer">kaliometer</input>
+            <input type="radio" name="viscosity" value="Meter">meter</input>
+            <hr>
+            <label>Enter Angle</label>
+            <br>
+            <input type="number" name="length"></input>
+            <input type="radio" name="l_unit" value="degree">degree</input>
+            <input type="radio" name="l_unit" value="radian">radian</input>
+            <hr>
+            <h4>If you'd ike to change gravity, please input a custom value for g (m/s^2):</h4>
+            <input type="number" name="gravity" value="9.8"></input>
+            <hr>
+            <button type="reset" style="width: 49%;">Reset</button>
+            <button type="submit" style="width: 49%;">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="Javascript/Physics/Exp.js"></script>
+    <style>
+        .navbar{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="Homepage.html">
+            <img src="Images\home.png" alt="Logo">
+        </a>
+    </div>
+
+        <h1>Simulate Spring Constant:</h1>
+        <form>
+            <label>Enter Mass </label>
+            <br>
+            <input type="number" name="length" id="m"></input>
+            <input type="radio" name="l_unit" value="cm">Centimeter</input>
+            <input type="radio" name="l_unit" value="m">Meter</input>
+            <hr>
+            <label>Enter Initial position</label>
+            <br>
+            <input type="number" name="position" id="x"></input>
+            <input type="radio" name="d_unit" value="cm">Centimeter</input>
+            <input type="radio" name="d_unit" value="m">Meter</input>
+            <hr>
+            <h4>If you'd ike to change gravity, please input a custom value for g (m/s^2):</h4>
+            
+            <input type="number" name="gravity" value="9.8" id="g"></input>
+            <table style="width: 50%; text-align: center; margin-left: 50%;">
+                <tr>
+                    <td style="border: 3px double gray; border-radius: 10px; font-size: xx-large; padding: 20px; text-align: center;">
+                        K: <span id="springConstant"></span>
+</td>
+                </tr>
+            </table>
+            <hr>
+            <button type="reset" style="width: 49%;">Reset</button>
+            <button type="button" style="width: 49%;" onclick = "Hooks_Law(document.getElementById('m').value,document.getElementById('g').value, document.getElementById('x').value)">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>
