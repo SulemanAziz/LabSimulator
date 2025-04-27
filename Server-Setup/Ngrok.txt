@@ -1,1 +1,7 @@
-To make the website visible to the internet, cd to the directory hello-ngrok and run the authentication command.
+To make the website visible to the internet, run:
+
+*Your Auth Token* node Enable_nGrok.js
+
+No Asterisks!
+
+Your auth token can be found on your nGrok account at https://dashboard.ngrok.com/get-started/setup/nodejs
