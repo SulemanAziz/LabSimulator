@@ -24,33 +24,33 @@
         <form>
             <label>Enter Viscosity (Pa/s) or Select Medium</label>
             <br>
-            <input type="number"></input>
+            <input type="number" id="v"></input>
             <input type="radio" name="viscosity" value="air">Air</input>
             <input type="radio" name="viscosity" value="water">Water</input>
             <hr>
             <label>Enter Length</label>
             <br>
-            <input type="number" name="length"></input>
+            <input type="number" name="length" id="l"></input>
             <input type="radio" name="l_unit" value="cm">Centimeter</input>
             <input type="radio" name="l_unit" value="m">Meter</input>
             <hr>
             <label>Enter Diameter</label>
             <br>
-            <input type="number" name="diameter"></input>
+            <input type="number" name="diameter" id="d"></input>
             <input type="radio" name="d_unit" value="cm">Centimeter</input>
             <input type="radio" name="d_unit" value="m">Meter</input>
             <hr>
             <label>Enter Mass</label>
             <br>
-            <input type="number" name="mass"></input>
+            <input type="number" name="mass" id="m"></input>
             <input type="radio" name="unit" value="kg">Kilograms</input>
             <input type="radio" name="unit" value="g">Grams</input>
             <hr>
             <h4>If you'd ike to change gravity, please input a custom value for g (m/s^2):</h4>
-            <input type="number" name="gravity" value="9.8"></input>
+            <input type="number" name="gravity" value="9.8" id="g"></input>
             <hr>
             <button type="reset" style="width: 49%;">Reset</button>
-            <button type="submit" style="width: 49%;">Calculate</button>
+            <button type="submit" style="width: 49%;" onclick="Period(event, document.getElementById('g').value,document.getElementById('d').value,document.getElementById('l').value,document.getElementById('v').value,document.getElementById('m').value)">Calculate</button>
         </form>
     </div>
 
