@@ -2,7 +2,7 @@
 
 WebApp Project to Simulate Practical Lab experiments, includes local hosting and Sqlite database, managed through the frontend with WebAssembly.
 
-##Setup
+##  Setup
 
 Make sure [NodeJS](https://nodejs.org/en/download) is installed and run:
 
