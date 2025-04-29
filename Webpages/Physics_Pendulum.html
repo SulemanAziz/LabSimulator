@@ -21,7 +21,7 @@
 
     <div style="width: 65%; height:auto; display:inline-block;" name="form" id="form" >
         <h1>Simulate Pendulum Period</h1>
-        <form>
+        <form >
             <label>Enter Viscosity (Pa/s) or Select Medium</label>
             <br>
             <input type="number" id="v"></input>
@@ -50,7 +50,7 @@
             <input type="number" name="gravity" value="9.8" id="g"></input>
             <hr>
             <button type="reset" style="width: 49%;">Reset</button>
-            <button type="submit" style="width: 49%;" onclick = "Period(document.getElementById('g').value,document.getElementById('d').value,document.getElementById('l').value,document.getElementById('v').value,document.getElementById('m').value)">Calculate</button>
+            <button type="button" style="width: 49%;" onclick = "Period(document.getElementById('g').value,document.getElementById('d').value,document.getElementById('l').value,document.getElementById('v').value,document.getElementById('m').value)">Calculate</button>
         </form>
     </div>
 

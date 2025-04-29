@@ -1,15 +1,15 @@
-function Period(event, g, d, l, v, m) //v stands for viscosity
+function Period(g, d, l, v, m) //v stands for viscosity
 {
   g=parseFloat(g);
   d=parseFloat(d);
   l=parseFloat(l);
   v=parseFloat(v);
-  m=parseFloat(m);
+  m=parseFloat(m);  
+  const B = (6 * Math.PI * v * (d / 2)); //Coeffecient
 
-  const B = (6 * Math.Pi * v * (d / 2)); //Coeffecient
-
-  const Period = (B * B) * (l / 4) * (m * m) * g;
-  document.getElementById("Period").innerText = Period + " seconds";
+  const Period = (B*B)*(l/4)*(m*m)*g;
+  
+  document.getElementById("period").innerHTML = Period + " seconds";
 }
 
 function ParabolicMotion() {
