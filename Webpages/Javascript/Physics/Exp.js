@@ -52,7 +52,7 @@ if (m_unit === 'g') m = m / 1000;
   }
 
   if (period !== null) {
-      document.getElementById("period").innerHTML = period + " seconds";
+      document.getElementById("period").innerHTML = period.toFixed(7) + " +- 0.01 seconds";
   } else {
       document.getElementById("period").innerHTML = dampingType;
   }
