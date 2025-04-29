@@ -1,5 +1,6 @@
-function Period(g, d, l, v, m) //v stands for viscosity
+function Period(event, g, d, l, v, m) //v stands for viscosity
 {
+  event.preventdefault();
   g=parseFloat(g);
   d=parseFloat(d);
   l=parseFloat(l);
