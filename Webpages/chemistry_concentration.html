@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solution Concentration</title>
     <link rel="stylesheet" href="Style.css">
-    <script src="Javascript/Physics/Exp.js"></script>
+    <script src="Javascript/Chemistry/Exp.JS"></script>
     <style>
         .navbar{
             width: 100%;
@@ -19,29 +19,35 @@
         </a>
     </div>
 
-        <h1>Simulate Spring Constant:</h1>
+        <h1>Simulate Solution:</h1>
         <form>
-            <label>Enter Mass </label>
+            <label>Enter Solute Quantity</label>
             <br>
-            <input type="number" name="length" id="m"></input>
-            <input type="radio" name="l_unit" value="cm">Centimeter</input>
-            <input type="radio" name="l_unit" value="m">Meter</input>
+            <input type="number" name="solute" id="solute"></input>
+            <input type="radio" name="s_unit" value="ppm">PPM</input>
+            <input type="radio" name="s_unit" value="mol">Mol</input>
             <hr>
-            <label>Enter Initial position</label>
+            <label>Enter Solvent Quantity</label>
             <br>
-            <input type="number" name="position" id="x"></input>
-            <input type="radio" name="d_unit" value="cm">Centimeter</input>
-            <input type="radio" name="d_unit" value="m">Meter</input>
+            <input type="number" name="solvent" id="solvent"></input>
+            <input type="radio" name="sol_unit" value="mL">Mililiters</input>
+            <input type="radio" name="sol_unit" value="L">Liters</input>
             <hr>
-            <h4>If you'd like to change gravity, please input a custom value for g (m/s²):</h4>
-            
-                    <input type="number" name="gravity" value="9.8" id="g" style="margin-top: 10px;"></input>
-                <div style="border: 3px double gray; border-radius: 10px; padding: 10px; font-size: xx-large; text-align: left; margin-left: 60%; margin-bottom: 1%; width: 30%;">
-                    K: <span id="springConstant"></span>
-                </div>
+            <label>Enter Temperature</label>
+            <br>
+            <input type="number" name="temp" id="temp"></input>
+            <input type="radio" name="temp_unit" value="C">Celsius</input>
+            <input type="radio" name="temp_unit" value="F">Fahrenheit</input>
+            <input type="radio" name="temp_unit" value="K">Kelvin</input>
+            <hr>            
+                
+            <div style="border: 3px double gray; border-radius: 10px; padding: 10px; font-size: xx-large; text-align: left; margin-left: 60%; margin-bottom: 1%; width: 30%;">
+                Concentration: <span id="Concentration"></span>
+            </div>
+
             <hr>
             <button type="reset" style="width: 49%;">Reset</button>
-            <button type="button" style="width: 49%;" onclick = "Hooks_Law(document.getElementById('m').value,document.getElementById('g').value, document.getElementById('x').value)">Calculate</button>
+            <button type="button" style="width: 49%;" onclick = "Concentration(document.getElementById('solute').value, document.getElementById('solvent').value)">Calculate</button>
         </form>
     </div>
 </body>

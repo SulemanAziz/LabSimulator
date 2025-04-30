@@ -1,3 +1,3 @@
-function Concentration(solvent,solute){
+function Concentration(solute,solvent){
     
 }
