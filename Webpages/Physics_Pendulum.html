@@ -6,59 +6,79 @@
     <title>Pendulum</title>
     <link rel="stylesheet" href="Style.css">
     <script src="Javascript\Physics\Exp.js" defer></script>
-    <style>
-        .navbar{
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-    <div id="navbar">
+    <div class="navbar">
         <a href="Homepage.html">
-            <img src="Images\home.png" alt="Logo">
+            <img src="Images\home.png" alt="Home">
         </a>
     </div>
 
-    <div style="width: 65%; height:auto; display:inline-block;" name="form" id="form" >
-        <h1>Simulate Pendulum Period</h1>
-        <form >
-            <label>Enter Viscosity (Pa*s) or Select Medium</label>
-            <br>
-            <input type="number" id="v" value="0.0000183"></input>
-            <input type="radio" name="viscosity" value="air" onclick="document.getElementById('v').value=0.0000183">Air
-            <input type="radio" name="viscosity" value="water" onclick="document.getElementById('v').value=0.89">Water</input>
-            <hr>
-            <label>Enter Length</label>
-            <br>
-            <input type="number" name="length" id="l"></input>
-            <input type="radio" name="l_unit" value="cm">Centimeter</input>
-            <input type="radio" name="l_unit" value="m">Meter</input>
-            <hr>
-            <label>Enter Diameter</label>
-            <br>
-            <input type="number" name="diameter" id="d"></input>
-            <input type="radio" name="d_unit" value="cm">Centimeter</input>
-            <input type="radio" name="d_unit" value="m">Meter</input>
-            <hr>
-            <label>Enter Mass</label>
-            <br>
-            <input type="number" name="mass" id="m"></input>
-            <input type="radio" name="unit" value="kg">Kilograms</input>
-            <input type="radio" name="unit" value="g">Grams</input>
-            <hr>
-            <h4>If you'd ike to change gravity, please input a custom value for g (m/s^2):</h4>
-            <input type="number" name="gravity" value="9.8" id="g"></input>
-            <hr>
-            <button type="reset" style="width: 49%;">Reset</button>
-            <button type="button" style="width: 49%;" onclick = "Period(document.getElementById('g').value,document.getElementById('d').value,document.getElementById('l').value,document.getElementById('v').value,document.getElementById('m').value)">Calculate</button>
-        </form>
-    </div>
+    <div class="experiment-container">
+        <div class="form-section">
+            <h1>Simulate Pendulum Period</h1>
+            <form>
+                <div class="input-group">
+                    <label>Enter Viscosity (Pa*s) or Select Medium</label>
+                    <input type="number" id="v" value="0.0000183">
+                    <div class="radio-group">
+                        <input type="radio" name="viscosity" value="air" onclick="document.getElementById('v').value=0.0000183">
+                        <label>Air</label>
+                        <input type="radio" name="viscosity" value="water" onclick="document.getElementById('v').value=0.89">
+                        <label>Water</label>
+                    </div>
+                </div>
 
-    <div name="output" id="output" style="display:inline-block; position:fixed; width: 23%; height:15%;">
-        <h1>Period:</h1> <h2 id="period" style="font-size:large;color:cyan"></h2>
-    </div>
+                <div class="input-group">
+                    <label>Enter Length</label>
+                    <input type="number" name="length" id="l">
+                    <div class="radio-group">
+                        <input type="radio" name="l_unit" value="cm"><label>Centimeter</label>
+                        <input type="radio" name="l_unit" value="m"><label>Meter</label>
+                    </div>
+                </div>
 
-    <div name="Graphic" style="display:inline-block; position:fixed; width: 31.5%; height:15%; margin-top: 10%;">
-        <img src="Images\Pendulum.gif" style="width:80%; border-radius: 10px;"></img>
+                <div class="input-group">
+                    <label>Enter Diameter</label>
+                    <input type="number" name="diameter" id="d">
+                    <div class="radio-group">
+                        <input type="radio" name="d_unit" value="cm"><label>Centimeter</label>
+                        <input type="radio" name="d_unit" value="m"><label>Meter</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Mass</label>
+                    <input type="number" name="mass" id="m">
+                    <div class="radio-group">
+                        <input type="radio" name="unit" value="kg"><label>Kilograms</label>
+                        <input type="radio" name="unit" value="g"><label>Grams</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>If you'd like to change gravity, please input a custom value for g (m/s²):</label>
+                    <input type="number" name="gravity" value="9.8" id="g">
+                </div>
+
+                <div class="button-group">
+                    <button type="reset">Reset</button>
+                    <button type="button" onclick="Period(document.getElementById('g').value,document.getElementById('d').value,document.getElementById('l').value,document.getElementById('v').value,document.getElementById('m').value)">
+                        Calculate
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="output-section">
+            <div class="result-display">
+                <h2>Period:</h2>
+                <span id="period"></span>
+            </div>
+            <div class="visualization">
+                <img src="Images\Pendulum.gif" alt="Pendulum Animation">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

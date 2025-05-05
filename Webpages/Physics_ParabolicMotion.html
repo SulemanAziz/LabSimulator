@@ -6,43 +6,51 @@
     <title>Parabola</title>
     <link rel="stylesheet" href="Style.css">
     <script src="Javascript\Physics\Exp.js" defer></script>
-    <style>
-        .navbar{
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-    <div id="navbar">
+    <div class="navbar">
         <a href="Homepage.html">
-            <img src="Images\home.png" alt="Logo">
+            <img src="Images\home.png" alt="Home">
         </a>
     </div>
 
-    <div style="width: 65%; height:auto; display:inline-block;" name="form" id="form" >
-        <h1>Parabolic Motion</h1>
-        <form>
-            <label>Enter Distance</label>
-            <br>
-            <input type="number"></input>
-            <input type="radio" name="viscosity" value="kaliometer">kaliometer</input>
-            <input type="radio" name="viscosity" value="Meter">meter</input>
-            <hr>
-            <label>Enter Angle</label>
-            <br>
-            <input type="number" name="length"></input>
-            <input type="radio" name="l_unit" value="degree">degree</input>
-            <input type="radio" name="l_unit" value="radian">radian</input>
-            <hr>
-            <h4>If you'd ike to change gravity, please input a custom value for g (m/s^2):</h4>
-            <input type="number" name="gravity" value="9.8"></input>
-            <div style="border: 3px double gray; border-radius: 10px; padding: 10px; font-size: xx-large; text-align: left; margin-left: 60%; margin-bottom: 1%; width: 30%;">
-                Vi: <span id="Vi"></span>
-            </div>
-            <hr>
-            <button type="reset" style="width: 49%;">Reset</button>
-            <button type="submit" style="width: 49%;">Calculate</button>
-        </form>
+    <div class="experiment-container">
+        <div class="form-section">
+            <h1>Parabolic Motion</h1>
+            <form>
+                <div class="input-group">
+                    <label>Enter Distance</label>
+                    <input type="number">
+                    <div class="radio-group">
+                        <input type="radio" name="viscosity" value="kaliometer"><label>Kilometer</label>
+                        <input type="radio" name="viscosity" value="Meter"><label>Meter</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Angle</label>
+                    <input type="number" name="length">
+                    <div class="radio-group">
+                        <input type="radio" name="l_unit" value="degree"><label>Degree</label>
+                        <input type="radio" name="l_unit" value="radian"><label>Radian</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>If you'd like to change gravity, please input a custom value for g (m/s²):</label>
+                    <input type="number" name="gravity" value="9.8">
+                </div>
+
+                <div class="result-display">
+                    Vi: <span id="Vi"></span>
+                </div>
+
+                <div class="button-group">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Calculate</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

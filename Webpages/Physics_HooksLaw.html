@@ -5,44 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spring Constant</title>
     <link rel="stylesheet" href="Style.css">
-    <script src="Javascript/Physics/Exp.js"></script>
-    <style>
-        .navbar{
-            width: 100%;
-        }
-    </style>
+    <script src="Javascript/Physics/Exp.js" defer></script>
 </head>
 <body>
-    <div id="navbar">
+    <div class="navbar">
         <a href="Homepage.html">
-            <img src="Images\home.png" alt="Logo">
+            <img src="Images\home.png" alt="Home">
         </a>
     </div>
 
-        <h1>Simulate Spring Constant:</h1>
-        <form>
-            <label>Enter Mass </label>
-            <br>
-            <input type="number" name="length" id="m"></input>
-            <input type="radio" name="l_unit" value="cm">Centimeter</input>
-            <input type="radio" name="l_unit" value="m">Meter</input>
-            <hr>
-            <label>Enter Initial position</label>
-            <br>
-            <input type="number" name="position" id="x"></input>
-            <input type="radio" name="d_unit" value="cm">Centimeter</input>
-            <input type="radio" name="d_unit" value="m">Meter</input>
-            <hr>
-            <h4>If you'd like to change gravity, please input a custom value for g (m/s²):</h4>
-            
-                    <input type="number" name="gravity" value="9.8" id="g" style="margin-top: 10px;"></input>
-                <div style="border: 3px double gray; border-radius: 10px; padding: 10px; font-size: xx-large; text-align: left; margin-left: 60%; margin-bottom: 1%; width: 30%;">
+    <div class="experiment-container">
+        <div class="form-section">
+            <h1>Simulate Spring Constant:</h1>
+            <form>
+                <div class="input-group">
+                    <label>Enter Mass</label>
+                    <input type="number" name="length" id="m">
+                    <div class="radio-group">
+                        <input type="radio" name="l_unit" value="cm"><label>Centimeter</label>
+                        <input type="radio" name="l_unit" value="m"><label>Meter</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Initial position</label>
+                    <input type="number" name="position" id="x">
+                    <div class="radio-group">
+                        <input type="radio" name="d_unit" value="cm"><label>Centimeter</label>
+                        <input type="radio" name="d_unit" value="m"><label>Meter</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>If you'd like to change gravity, please input a custom value for g (m/s²):</label>
+                    <input type="number" name="gravity" value="9.8" id="g">
+                </div>
+
+                <div class="result-display">
                     K: <span id="springConstant"></span>
                 </div>
-            <hr>
-            <button type="reset" style="width: 49%;">Reset</button>
-            <button type="button" style="width: 49%;" onclick = "Hooks_Law(document.getElementById('m').value,document.getElementById('g').value, document.getElementById('x').value)">Calculate</button>
-        </form>
+
+                <div class="button-group">
+                    <button type="reset">Reset</button>
+                    <button type="button" onclick="Hooks_Law(document.getElementById('m').value,document.getElementById('g').value, document.getElementById('x').value)">Calculate</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>

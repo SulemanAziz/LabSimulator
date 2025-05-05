@@ -5,50 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solution Concentration</title>
     <link rel="stylesheet" href="Style.css">
-    <script src="Javascript/Chemistry/Exp.JS"></script>
-    <style>
-        .navbar{
-            width: 100%;
-        }
-    </style>
+    <script src="Javascript/Chemistry/Exp.JS" defer></script>
 </head>
 <body>
-    <div id="navbar">
+    <div class="navbar">
         <a href="Homepage.html">
-            <img src="Images\home.png" alt="Logo">
+            <img src="Images\home.png" alt="Home">
         </a>
     </div>
 
-        <h1>Simulate Solution:</h1>
-        <form>
-            <label>Enter Solute Quantity</label>
-            <br>
-            <input type="number" name="solute" id="solute"></input>
-            <input type="radio" name="s_unit" value="ppm">PPM</input>
-            <input type="radio" name="s_unit" value="mol">Mol</input>
-            <hr>
-            <label>Enter Solvent Quantity</label>
-            <br>
-            <input type="number" name="solvent" id="solvent"></input>
-            <input type="radio" name="sol_unit" value="mL">Mililiters</input>
-            <input type="radio" name="sol_unit" value="L">Liters</input>
-            <hr>
-            <label>Enter Temperature</label>
-            <br>
-            <input type="number" name="temp" id="temp"></input>
-            <input type="radio" name="temp_unit" value="C">Celsius</input>
-            <input type="radio" name="temp_unit" value="F">Fahrenheit</input>
-            <input type="radio" name="temp_unit" value="K">Kelvin</input>
-            <hr>            
-                
-            <div style="border: 3px double gray; border-radius: 10px; padding: 10px; font-size: xx-large; text-align: left; margin-left: 60%; margin-bottom: 1%; width: 30%;">
-                Concentration: <span id="Concentration"></span>
-            </div>
+    <div class="experiment-container">
+        <div class="form-section">
+            <h1>Simulate Solution:</h1>
+            <form>
+                <div class="input-group">
+                    <label>Enter Solute Quantity</label>
+                    <input type="number" name="solute" id="solute">
+                    <div class="radio-group">
+                        <input type="radio" name="s_unit" value="ppm"><label>PPM</label>
+                        <input type="radio" name="s_unit" value="mol"><label>Mol</label>
+                    </div>
+                </div>
 
-            <hr>
-            <button type="reset" style="width: 49%;">Reset</button>
-            <button type="button" style="width: 49%;" onclick = "Concentration(document.getElementById('solute').value, document.getElementById('solvent').value)">Calculate</button>
-        </form>
+                <div class="input-group">
+                    <label>Enter Solvent Quantity</label>
+                    <input type="number" name="solvent" id="solvent">
+                    <div class="radio-group">
+                        <input type="radio" name="sol_unit" value="mL"><label>Milliliters</label>
+                        <input type="radio" name="sol_unit" value="L"><label>Liters</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Temperature</label>
+                    <input type="number" name="temp" id="temp">
+                    <div class="radio-group">
+                        <input type="radio" name="temp_unit" value="C"><label>Celsius</label>
+                        <input type="radio" name="temp_unit" value="F"><label>Fahrenheit</label>
+                        <input type="radio" name="temp_unit" value="K"><label>Kelvin</label>
+                    </div>
+                </div>
+
+                <div class="result-display">
+                    Concentration: <span id="Concentration"></span>
+                </div>
+
+                <div class="button-group">
+                    <button type="reset">Reset</button>
+                    <button type="button" onclick="Concentration(document.getElementById('solute').value, document.getElementById('solvent').value)">Calculate</button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 </html>
