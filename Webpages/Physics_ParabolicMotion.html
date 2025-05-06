@@ -20,34 +20,38 @@
             <form>
                 <div class="input-group">
                     <label>Enter Distance</label>
-                    <input type="number">
+                    <input type="number" id="d">
                     <div class="radio-group">
-                        <input type="radio" name="viscosity" value="kaliometer"><label>Kilometer</label>
-                        <input type="radio" name="viscosity" value="Meter"><label>Meter</label>
+                        <input type="radio" name="distance" value="Km"><label>Kilometer</label>
+                        <input type="radio" name="distance" value="m"><label>Meter</label>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <label>Enter Angle</label>
-                    <input type="number" name="length">
+                    <input type="number" name="Angle" id="a">
                     <div class="radio-group">
-                        <input type="radio" name="l_unit" value="degree"><label>Degree</label>
-                        <input type="radio" name="l_unit" value="radian"><label>Radian</label>
+                        <input type="radio" name="Angle" value="degree"><label>Degree</label>
+                        <input type="radio" name="Angle" value="radian"><label>Radian</label>
                     </div>
                 </div>
 
                 <div class="input-group">
                     <label>If you'd like to change gravity, please input a custom value for g (m/s²):</label>
-                    <input type="number" name="gravity" value="9.8">
+                    <input type="number" name="gravity" value="9.8" id="g">
                 </div>
 
                 <div class="result-display">
                     Vi: <span id="Vi"></span>
+                <div class="radio-group">
+                    <input type="radio" name="unit" value="Km/h" onclick="speed(document.getElementById('vi').value)"><label>Km/h</label>
+                    <input type="radio" name="unit" value="m/s"><label>m/s</label>
+                </div>
                 </div>
                 
                 <div class="button-group">
                     <button type="reset">Reset</button>
-                    <button type="submit">Calculate</button>
+                    <button type="button" onclick="ParabolicMotion(document.getElementById('d').value,document.getElementById('g').value,document.getElementById('a').value)">Calculate</button>
                 </div>
             </form>
         </div>

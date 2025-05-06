@@ -59,8 +59,24 @@ if (m_unit === 'g') m = m / 1000;
 
 }
 
-function ParabolicMotion() {
-  
+function ParabolicMotion(d,g,a) {
+    const distance = document.querySelector('input[name="distance"]:checked').value;
+    const Angle= document.querySelector('input[name="Angle"]:checked').value;
+
+    if(distance === 'Km') d = d*1000;
+    if(Angle === 'Degrees') a = a * Math.PI / 180; // Convert degrees to radians
+    let vi=Math.sqrt((d*g)/2*Math.sin(a));
+
+    const speed_unit = document.querySelector('input[name="unit"]:checked').value;
+
+    if(speed_unit === 'Km/h'){
+      vi = vi * 3.6; // Convert m/s to km/h
+      document.getElementById('Vi').innerHTML = vi.toFixed(5) + " +- 0.01 km/h"
+  }
+    else{
+      document.getElementById('Vi').innerHTML = vi.toFixed(5) + " +- 0.1 m/s"
+    }
+
 }
 
 function Hooks_Law(m, g, x) {
@@ -81,3 +97,4 @@ function Hooks_Law(m, g, x) {
 
   document.getElementById("springConstant").innerText = k; //Spring constant
 }
+
