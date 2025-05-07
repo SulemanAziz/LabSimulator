@@ -18,7 +18,7 @@ function Concentration(n,v,mm){
      
     
     if(s_unit === 'gram') n = n/mm;
-    if(sol_unit === 'ml') v = v/1000;
+    if(sol_unit === 'mL') v = v/1000;
     
     
     let m = n/v;
