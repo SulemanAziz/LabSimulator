@@ -19,40 +19,48 @@
             <h1>Simulate Solution:</h1>
             <form>
                 <div class="input-group">
-                    <label>Enter Solute Quantity</label>
-                    <input type="number" name="solute" id="solute">
+                    <label>Enter Molarity 1</label>
+                    <input type="number" name="Molarity" id="M">
                     <div class="radio-group">
-                        <input type="radio" name="s_unit" value="ppm"><label>PPM</label>
-                        <input type="radio" name="s_unit" value="mol"><label>Mol</label>
+                        <input type="radio" name="M_unit" value="Liter"><label>Liter</label>
+                        <input type="radio" name="M_unit" value="mol"><label>Mol</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Enter Solvent Quantity</label>
-                    <input type="number" name="solvent" id="solvent">
+                    <label>Enter Volume 1</label>
+                    <input type="number" name="Volume" id="V">
                     <div class="radio-group">
-                        <input type="radio" name="sol_unit" value="mL"><label>Milliliters</label>
-                        <input type="radio" name="sol_unit" value="L"><label>Liters</label>
+                        <input type="radio" name="v_unit" value="mL"><label>Milliliters</label>
+                        <input type="radio" name="v_unit" value="L"><label>Liters</label>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>Enter Temperature</label>
-                    <input type="number" name="temp" id="temp">
+                    <label>Enter Molarity 2</label>
+                    <input type="number" name="Molarity2" id="M2">
                     <div class="radio-group">
-                        <input type="radio" name="temp_unit" value="C"><label>Celsius</label>
-                        <input type="radio" name="temp_unit" value="F"><label>Fahrenheit</label>
-                        <input type="radio" name="temp_unit" value="K"><label>Kelvin</label>
+                        <input type="radio" name="M_unit" value="Liter"><label>Liter</label>
+                        <input type="radio" name="M_unit" value="mol"><label>Mol</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Volume 2</label>
+                    <input type="number" name="Volume2" id="V2">
+                    <div class="radio-group">
+                        <input type="radio" name="V_unit" value="mL"><label>Milliliters</label>
+                        <input type="radio" name="v_unit" value="L"><label>Liters</label>
                     </div>
                 </div>
 
                 <div class="result-display">
-                    Concentration: <span id="Concentration"></span>
+                    Titration: <span id="Titration"></span>
                 </div>
 
                 <div class="button-group">
                     <button type="reset">Reset</button>
-                    <button type="button" onclick="Concentration(document.getElementById('solute').value, document.getElementById('solvent').value)">Calculate</button>
+                    <button type="button" onclick="Titration(document.getElementById('M').value, document.getElementById('V').value,document.getElementById('M2').value,document.getElementById('V2').value)">Calculate</button>
                 </div>
             </form>
         </div>
