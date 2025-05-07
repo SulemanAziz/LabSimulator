@@ -1,14 +1,34 @@
 function Concentration(n,v,mm){
-    const s_unit=document.querySelector('input[name="s_unit"]:checked').value;
-    const sol_unit= document.getElementById('input[name="sol_unit"]:checked').value;
-     
-    if(s_unit==='gram') n=n/mm;
     
-    if(sol_unit==='ml')v=v/1000;
-    
-    let m=n/v;
+    n = parseFloat(n);
+    v = parseFloat(v);    
+    mm = parseFloat(mm);
 
-    document.getElementById('Concentration').innerHTML = m.toFixed(5) + " mol/L";
+    // Input validation
+    if (isNaN(n) || isNaN(v) || isNaN(mm) || v === 0) {
+        document.getElementById('Concentration').innerHTML = "Invalid input values";
+        return;
+    }
+
+    
+    const s_unit = document.querySelector('input[name="s_unit"]:checked')?.value;
+    const sol_unit = document.querySelector('input[name="sol_unit"]:checked')?.value;
+
+    
+     
+    
+    if(s_unit === 'gram') n = n/mm;
+    if(sol_unit === 'ml') v = v/1000;
+    
+    
+    let m = n/v;
+
+    // Display result
+    if(isFinite(m)){
+        document.getElementById('Concentration').innerHTML = m.toFixed(5) + " mol/L";
+    } else {
+        document.getElementById('Concentration').innerHTML = "Invalid calculation";
+    }
 }
 
 function PH(){
