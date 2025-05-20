@@ -30,11 +30,37 @@ function Concentration(n,v,mm){
     }
 }
 
-function PH(){
+function FinalPH(pH1, V1, pH2, V2) {
+    // Convert pH values to [H+] concentrations
+    const H1 = Math.pow(10, -pH1);
+    const H2 = Math.pow(10, -pH2);
+
+    // Convert volumes from mL to Liters
+    const L1 = V1 / 1000;
+    const L2 = V2 / 1000;
+
+    // Calculate moles of H+ in each solution
+    const n1 = H1 * L1;
+    const n2 = H2 * L2;
+
+    // Total moles and volume
+    const totalMoles = n1 + n2;
+    const totalVolume = L1 + L2;
+
+    // Final [H+] concentration
+    const Hfinal = totalMoles / totalVolume;
+
+    // Final pH
+    const pHFinal = -Math.log10(Hfinal);
+
+    document.getElementById('FPH').innertHTML = pHFinal;
+    document.getElementById('FV').innertHTML = totalVolume;
     
-
-
 }
+
+
+
+
 
 function Titration(m1,v1,v2){
     m1 = parseFloat(m1);
@@ -55,5 +81,5 @@ function Titration(m1,v1,v2){
     let m2 = (m1*v1)/v2;
 
     document.getElementById('Titration').innerHTML = 
-        "V₂ = " + m2.toFixed(5) + " +- 0.1 mol";
+        m2.toFixed(5) + " +- 0.1 mol";
 }
