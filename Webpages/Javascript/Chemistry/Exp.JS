@@ -35,9 +35,21 @@ function FinalPH(pH1, V1, pH2, V2) {
     const H1 = Math.pow(10, -pH1);
     const H2 = Math.pow(10, -pH2);
 
-    // Convert volumes from mL to Liters
-    const L1 = V1 / 1000;
-    const L2 = V2 / 1000;
+    const V1_unit = document.querySelector('input[name="Volume1"]:checked')?.value;
+
+    if(V1_unit=="mL")
+    {
+        V1 = V1/1000;
+    }
+
+    const V2_unit = document.querySelector('input[name="Volume2"]:checked')?.value;
+    if(V2_unit=="mL")
+    {
+        V2 = V2/1000;
+    }
+
+    const L1 = V1;
+    const L2 = V2;
 
     // Calculate moles of H+ in each solution
     const n1 = H1 * L1;
@@ -53,9 +65,10 @@ function FinalPH(pH1, V1, pH2, V2) {
     // Final pH
     const pHFinal = -Math.log10(Hfinal);
 
-    document.getElementById('FPH').innertHTML = pHFinal;
+    document.getElementById('FPH').innertHTML = pHFinal.toFixed(2);
     document.getElementById('FV').innertHTML = totalVolume;
-    
+
+    console.log("pHFinal");
 }
 
 
