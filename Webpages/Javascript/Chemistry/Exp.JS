@@ -32,24 +32,28 @@ function Concentration(n,v,mm){
 
 function FinalPH(pH1, V1, pH2, V2) {
     // Convert pH values to [H+] concentrations
-    const H1 = Math.pow(10, -pH1);
-    const H2 = Math.pow(10, -pH2);
+    
+    let ph1=parseFloat(pH1);
+    let ph2=parseFloat(pH2);
+    let v1=parseFloat(V1);
+    let v2=parseFloat(V2);
+    
+    const H1 = Math.pow(10, -ph1);
+    const H2 = Math.pow(10, -ph2);
 
     const V1_unit = document.querySelector('input[name="Volume1"]:checked')?.value;
-
     if(V1_unit=="mL")
     {
-        V1 = V1/1000;
+        v1 = v1/1000;
     }
-
     const V2_unit = document.querySelector('input[name="Volume2"]:checked')?.value;
     if(V2_unit=="mL")
     {
-        V2 = V2/1000;
+        v2 = v2/1000;
     }
 
-    const L1 = V1;
-    const L2 = V2;
+    const L1 = v1;
+    const L2 = v2;
 
     // Calculate moles of H+ in each solution
     const n1 = H1 * L1;
@@ -65,15 +69,10 @@ function FinalPH(pH1, V1, pH2, V2) {
     // Final pH
     const pHFinal = -Math.log10(Hfinal);
 
-    document.getElementById('FPH').innertHTML = pHFinal.toFixed(2);
-    document.getElementById('FV').innertHTML = totalVolume;
+    document.getElementById('FPH').innerHTML = pHFinal.toFixed(2);
+    document.getElementById('FV').innerHTML = totalVolume;
 
-    console.log("pHFinal");
 }
-
-
-
-
 
 function Titration(m1,v1,v2){
     m1 = parseFloat(m1);
