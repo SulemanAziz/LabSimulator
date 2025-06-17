@@ -64,7 +64,8 @@ function ParabolicMotion(d,g,a) {
     const Angle= document.querySelector('input[name="Angle"]:checked').value;
 
     if(distance === 'Km') d = d*1000;
-    if(Angle === 'Degrees') a = a * Math.PI / 180; // Convert degrees to radians
+    if(Angle === 'degree') a = a * Math.PI / 180; // Convert degrees to radians
+
     let vi=Math.sqrt((d*g)/2*Math.sin(a));
 
     const speed_unit = document.querySelector('input[name="unit"]:checked').value;
@@ -77,6 +78,8 @@ function ParabolicMotion(d,g,a) {
       document.getElementById('Vi').innerHTML = vi.toFixed(5) + " +- 0.1 m/s"
     }
 
+    console.log(vi);
+
 }
 
 function Hooks_Law(m, g, x) {
@@ -84,6 +87,17 @@ function Hooks_Law(m, g, x) {
   let mass = parseFloat(m);
   let gravity = parseFloat(g);
   let x0 = parseFloat(x);
+  
+  const l_unit = document.querySelector('input[name="l_unit"]:checked').value;
+  const m_unit = document.querySelector('input[name="m_unit"]:checked').value;
+  
+  if(m_unit=='g'){
+    mass = mass/1000;
+  }
+  if(l_unit=='cm'){
+    x0=x0/100;
+  }
+
   let k = (mass * gravity) / x0; //Hook's Law
 
   const random = Math.random();
