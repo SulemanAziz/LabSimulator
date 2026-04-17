@@ -1,8 +1,11 @@
 # LabSimulator
 
-WebApp Project to Simulate Practical Lab experiments, includes local hosting and Sqlite database, managed through the frontend with WebAssembly.
+WebApp Project to Simulate Practical Lab experiments, includes local hosting and Sqlite database, managed **through the frontend** with WebAssembly.
 
 Visit site at https://sulemanaziz.github.io/LabSimulator
+
+Username: 5003
+Password: 0314
 
 ##  Setup
 
