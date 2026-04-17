@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titrate Solution</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="Javascript/Chemistry/Exp.JS" defer></script>
+</head>
+<body>
+    <div class="navbar">
+        <a href="Homepage.html">
+            <img src="Images\home.png" alt="Home">
+        </a>
+    </div>
+
+    <div class="experiment-container">
+        <div class="form-section">
+            <h1>Simulate Solution:</h1>
+            <form>
+                <div class="input-group">
+                    <label>Enter Molarity 1</label>
+                    <input type="number" name="Molarity" id="M1">
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Volume 1</label>
+                    <input type="number" name="Volume 1" id="V1">
+                    <div class="radio-group">
+                        <input type="radio" name="v_unit" value="mL"><label>Milliliters</label>
+                        <input type="radio" name="v_unit" value="L"><label>Liters</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Volume 2 </label>
+                    <input type="number" name="Volume 2" id="V2">
+                    <div class="radio-group">
+                        <input type="radio" name="v2_unit" value="mL"><label>Milliliters</label>
+                        <input type="radio" name="v2_unit" value="L"><label>Liters</label>
+                    </div>
+                </div>
+
+                <div class="result-display">
+                    Molarity 2: <span id="Titration"></span>
+                </div>
+
+                <div class="button-group">
+                    <button type="reset">Reset</button>
+                    <button type="button" onclick="Titration (document.getElementById('M1').value,document.getElementById('V1').value,document.getElementById('V2').value)">Calculate</button>
+                </div>
+            </form>
+        </div>
+        <div class="visualization">
+            <img src="Images\Titration.gif" alt="Titration Animation">
+        </div>
+    </div>
+    </div>
+</body>
+</html>

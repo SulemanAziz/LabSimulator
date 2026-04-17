@@ -2,7 +2,7 @@ async function Validate_User(event, user,pass) {
 
   event.preventDefault();
 
-  const response= await fetch('Server-Setup/Database/Login.db'); //SQLie Database is connected here
+  const response= await fetch('Database/Login.db'); //SQLie Database is connected here
   const arrayBuffer = await response.arrayBuffer(); //Converted to binary array so it can be read on the browser by sql.js
 
   const SQL = await initSqlJs();

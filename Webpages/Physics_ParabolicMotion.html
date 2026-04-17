@@ -4,45 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parabola</title>
+    <link rel="stylesheet" href="Style.css">
     <script src="Javascript\Physics\Exp.js" defer></script>
-    <link rel="stylesheet" href="\Style.css">
-    <style>
-        .navbar{
-            width: 100%;
-        }
-    </style>
 </head>
 <body>
-    <div id="navbar">
+    <div class="navbar">
         <a href="Homepage.html">
-            <img src="Images\home.png" alt="Logo">
+            <img src="Images\home.png" alt="Home">
         </a>
     </div>
 
-    <div style="width: 65%; height:auto; display:inline-block;" name="form" id="form" >
-        <h1>Parabolic Motion</h1>
-        <form>
-            <label>Enter Distance</label>
-            <br>
-            <input type="number"></input>
-            <input type="radio" name="viscosity" value="kaliometer">kaliometer</input>
-            <input type="radio" name="viscosity" value="Meter">meter</input>
-            <hr>
-            <label>Enter Angle</label>
-            <br>
-            <input type="number" name="length"></input>
-            <input type="radio" name="l_unit" value="degree">degree</input>
-            <input type="radio" name="l_unit" value="radian">radian</input>
-            <hr>
-            <h4>If you'd ike to change gravity, please input a custom value for g (m/s^2):</h4>
-            <input type="number" name="gravity" value="9.8"></input>
-            <div style="border: 3px double gray; border-radius: 10px; padding: 10px; font-size: xx-large; text-align: left; margin-left: 60%; margin-bottom: 1%; width: 30%;">
-                Vi: <span id="Vi"></span>
-            </div>
-            <hr>
-            <button type="reset" style="width: 49%;">Reset</button>
-            <button type="submit" style="width: 49%;">Calculate</button>
-        </form>
+    <div class="experiment-container">
+        <div class="form-section">
+            <h1>Parabolic Motion</h1>
+            <form>
+                <div class="input-group">
+                    <label>Enter Distance</label>
+                    <input type="number" id="d">
+                    <div class="radio-group">
+                        <input type="radio" name="distance" value="Km"><label>Kilometer</label>
+                        <input type="radio" name="distance" value="m"><label>Meter</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Enter Angle</label>
+                    <input type="number" name="Angle" id="a">
+                    <div class="radio-group">
+                        <input type="radio" name="Angle" value="degree"><label>Degree</label>
+                        <input type="radio" name="Angle" value="radian"><label>Radian</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>If you'd like to change gravity, please input a custom value for g (m/s²):</label>
+                    <input type="number" name="gravity" value="9.8" id="g">
+                </div>
+
+                <div class="result-display">
+                    Vi: <span id="Vi"></span>
+                <div class="radio-group">
+                    <input type="radio" name="unit" value="Km/h"><label>Km/h</label>
+                    <input type="radio" name="unit" value="m/s"><label>m/s</label>
+                </div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="reset">Reset</button>
+                    <button type="button" onclick="ParabolicMotion(document.getElementById('d').value,document.getElementById('g').value,document.getElementById('a').value)">Calculate</button>
+                </div>
+            </form>
+        </div>
+        <div class="visualization">
+            <img src="Images\Parabola.gif" alt="Parabola Animation">
+        </div>
     </div>
 </body>
 </html>
